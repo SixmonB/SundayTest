@@ -22,7 +22,7 @@ public class BallRoller : MonoBehaviour
         cameraOffset = GameObject.Find("PlayerBall").transform.position - Camera.main.transform.position;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         var ballRigidbody = GameObject.Find("PlayerBall").GetComponent<Rigidbody>();
 
