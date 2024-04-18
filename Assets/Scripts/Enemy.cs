@@ -13,8 +13,13 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.name == "PlayerBall")
         {
-            MyEventSystem.I.FailLevel(currentLevel);
-            SceneManager.LoadScene(sceneToLoad);
+            
+            //SceneManager.LoadScene(sceneToLoad);
+            int intThisLevel = SceneManager.GetActiveScene().buildIndex;
+            string strThisLevel = "Level" + intThisLevel.ToString();
+            SceneManager.LoadScene(strThisLevel);
+
+            MyEventSystem.I.FailLevel(intThisLevel);
         }
     }
 }
